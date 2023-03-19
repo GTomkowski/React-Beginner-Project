@@ -1,5 +1,6 @@
 .form {
 	width: 450px;
+    margin-top: 45px;
 	border: 2px solid grey;
     border-radius: 12px;
 }
@@ -20,6 +21,7 @@
 
 .form-control__label {
     font-weight: bold;
+    font-size: 16px;
 }
 
 .form-control__input {

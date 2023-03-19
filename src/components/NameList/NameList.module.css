@@ -1,0 +1,13 @@
+.form-control {
+	padding: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.list {
+	width: 450px;
+	margin-top: 45px;
+	border: 2px solid grey;
+	border-radius: 12px;
+}
