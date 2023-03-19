@@ -1,0 +1,28 @@
+.form {
+	width: 450px;
+	border: 2px solid grey;
+    border-radius: 12px;
+}
+
+.form-controls {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
+
+.form-control {
+    padding: 8px;
+    margin-top: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.form-control__label {
+    font-weight: bold;
+}
+
+.form-control__input {
+    margin-top: 8px;
+    padding: 6px;
+}

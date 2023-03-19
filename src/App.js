@@ -1,22 +1,17 @@
 import React from "react";
-import Component from './components/Component'
-import "./App.css";
-
- function App() {
+import InputForm from "./components/InputForm";
+import styles from "./App.module.css";
+function App() {
 	return (
-		<div>
-
-    <Component />
-
-    </div>
+		<div className={styles.wrapper}>
+			<InputForm />
+		</div>
 	);
 }
 
-// project scope 
+// project scope
 
 // what is needed?
-
-// a form // FormInput Component
 
 // a label and an input - twice // this belongs to FormInput
 
@@ -25,3 +20,31 @@ import "./App.css";
 // a name list appears - with nameItems Component with a nameItem Components
 
 export default App;
+
+// how is form component structured?
+
+/* <form> 
+  <div className="form-controls">
+
+  <div className="form-control"
+
+  <label></label>
+  <input></input>
+
+  </div>
+
+  
+
+  <div className="form-control"
+
+  <label></label>
+  <input></input>
+
+  </div>
+
+  </div>
+
+
+
+
+*/
