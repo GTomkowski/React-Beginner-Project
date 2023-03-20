@@ -1,23 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import InputForm from "./components/InputForm/InputForm";
 import styles from "./App.module.css";
 import NameList from "./components/NameList/NameList";
 function App() {
-	// tutaj bedziemy renderowac modala warunkowow w zaleznosci czy NameList length > 0 czy nie
+	const [itemArray, setItemArray] = useState([]);
+	// przekazemy z input form do "gory" tablice obiektow, nastepnie jako props do namelist
+
+	const handleListData = (listItem) => {
+		setItemArray((prevExpenses) => {
+			return [listItem, ...prevExpenses];
+		});
+	};
 
 	return (
 		<div className={styles.wrapper}>
-			<InputForm />
-			<NameList />
+			<InputForm onSaveArray={handleListData} />
+			<NameList passedArray={itemArray} />
 		</div>
 	);
 }
-
-// project scope
-
-// what is needed?
-
-// a name list appears - with nameItems Component with a nameItem Components
 
 export default App;
 

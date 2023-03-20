@@ -3,15 +3,19 @@ import styles from "./NameList.module.css";
 import NameItem from "./NameItem";
 
 const NameList = (props) => {
+	// podczas klikniecia przycisku submit przekazywane sa dwa itemy naraz, powinien wyswietlac sie jeden
+	let itemContent = null;
+
+	if (props.passedArray.length > 0) {
+		itemContent = props.passedArray.map((item) => {
+			return (
+				<NameItem username={item.name} age={item.age} id={item.key}></NameItem>
+			);
+		});
+	}
 	return (
 		<div className={styles.list}>
-			<ul className={styles['form-control']}>
-				<NameItem></NameItem>
-				<NameItem></NameItem>
-				<NameItem></NameItem>
-				<NameItem></NameItem>
-				<NameItem></NameItem>
-			</ul>
+			<ul className={styles["form-control"]}>{itemContent}</ul>
 		</div>
 	);
 };
