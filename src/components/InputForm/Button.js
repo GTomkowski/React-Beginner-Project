@@ -10,4 +10,7 @@ export default Button;
 
 // what are we doing next?
 
-// we are going to create a modal that will appear on top of the 
+// please enter non empty values
+
+// please enter a valid age
+
