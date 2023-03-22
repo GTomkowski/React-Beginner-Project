@@ -22,7 +22,6 @@ const InputForm = (props) => {
 		props.onSaveArray(listData);
 		setEnteredUsername("");
 		setAge("");
-		
 	};
 
 	return (
@@ -34,6 +33,7 @@ const InputForm = (props) => {
 						onChange={handleUsernameChange}
 						className={styles["form-control__input"]}
 						type="text"
+						value={enteredUsername}
 					/>
 				</div>
 			</div>
@@ -46,6 +46,7 @@ const InputForm = (props) => {
 					type="number"
 					step="1"
 					max="99"
+					value={enteredAge}
 				/>
 			</div>
 			<Button type="submit"></Button>

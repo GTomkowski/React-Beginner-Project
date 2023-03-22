@@ -8,9 +8,14 @@ function App() {
 
 	const handleListData = (listItem) => {
 		setItemArray((prevExpenses) => {
-			return [listItem, ...prevExpenses];
+			console.log(prevExpenses);
+			return [listItem, ...prevExpenses]; // works as inteded
 		});
 	};
+	// ...[{}] = {}
+
+	// [{}, ...[{}] ] = [{}, {}] 
+
 
 	return (
 		<div className={styles.wrapper}>
@@ -21,31 +26,3 @@ function App() {
 }
 
 export default App;
-
-// how is form component structured?
-
-/* <form> 
-  <div className="form-controls">
-
-  <div className="form-control"
-
-  <label></label>
-  <input></input>
-
-  </div>
-
-  
-
-  <div className="form-control"
-
-  <label></label>
-  <input></input>
-
-  </div>
-
-  </div>
-
-
-
-
-*/

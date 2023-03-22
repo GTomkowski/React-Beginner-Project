@@ -5,7 +5,7 @@ const NameItem = (props) => {
 	return (
 		<li
 			className={styles.item}
-		>{`${props.username} ${props.age} years old`}</li>
+		>{`${props.userName} ${props.age} years old`}</li>
 	);
 };
 

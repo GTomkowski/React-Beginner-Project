@@ -9,7 +9,11 @@ const NameList = (props) => {
 	if (props.passedArray.length > 0) {
 		itemContent = props.passedArray.map((item) => {
 			return (
-				<NameItem username={item.name} age={item.age} id={item.key}></NameItem>
+				<NameItem
+					userName={item.username}
+					age={item.age}
+					key={item.key}
+				></NameItem>
 			);
 		});
 	}
