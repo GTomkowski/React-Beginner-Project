@@ -1,9 +1,9 @@
 .modal {
 	position: absolute;
-	top: 28%;
+	top: 38%;
 	left: 50%;
 	width: 450px;
-	transform: translate(-50%, -28%);
+	transform: translate(-50%, -38%);
 	border: 1px solid grey;
 	border-radius: 10px;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
@@ -23,14 +23,14 @@
 }
 
 .modal__body {
-    height: 90px;
+	height: 90px;
 	padding: 10px;
 	position: relative;
 }
 
 .modal__text {
-    margin-top: 10px;
-    font-weight: bold;
+	margin-top: 10px;
+	font-weight: bold;
 }
 .modal__button {
 	position: absolute;
@@ -38,7 +38,7 @@
 	right: 10px;
 	background-color: indigo;
 	color: white;
-    text-transform: uppercase;
+	text-transform: uppercase;
 	border: none;
 	border-radius: 5px;
 	padding: 10px;

@@ -4,7 +4,7 @@ import NameItem from "./NameItem";
 
 const NameList = (props) => {
 	// podczas klikniecia przycisku submit przekazywane sa dwa itemy naraz, powinien wyswietlac sie jeden
-	let itemContent = null;
+	let itemContent;
 
 	if (props.passedArray.length > 0) {
 		itemContent = props.passedArray.map((item) => {

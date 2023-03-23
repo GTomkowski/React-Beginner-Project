@@ -5,25 +5,40 @@ import NameList from "./components/NameList/NameList";
 import Modal from "./components/Modal/Modal";
 function App() {
 	const [itemArray, setItemArray] = useState([]);
-	// przekazemy z input form do "gory" tablice obiektow, nastepnie jako props do namelist
+	const [inputObject, setInputObject] = useState({});
+	const [isClicked, setIsClicked] = useState(false);
 
 	const handleListData = (listItem) => {
 		setItemArray((prevExpenses) => {
-			console.log(prevExpenses);
-			return [listItem, ...prevExpenses]; // works as inteded
+			return [listItem, ...prevExpenses];
 		});
 	};
-	// ...[{}] = {}
 
-	// [{}, ...[{}] ] = [{}, {}]
+	const handleInputData = (inputData) => {
+		setInputObject(inputData);
+	};
+
+	const nonNegativeMessage =
+		"Please enter a valid name and age (non-empty values)";
+	const greaterThanZeroMessage = `Please enter a valid age (> 0)`;
+	let modalContent = null;
+
+	if (inputObject.username === "" || inputObject.age === "") {
+		modalContent = <Modal message={nonNegativeMessage}></Modal>;
+	}
+	if (inputObject.age < 0) {
+		modalContent = <Modal message={greaterThanZeroMessage}></Modal>;
+	}
 
 	return (
 		<div className={styles.wrapper}>
-			<InputForm onSaveArray={handleListData} />
-			{/* <NameList passedArray={itemArray} /> */}
-			<Modal></Modal>
+			<InputForm onSaveArray={handleListData} inputData={handleInputData} />
+			{modalContent}
+			{modalContent === null && <NameList passedArray={itemArray}></NameList>}
 		</div>
 	);
 }
 
 export default App;
+
+// teraz jeszcze tylko zostalo mi zamkniecie formularza
