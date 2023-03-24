@@ -4,6 +4,7 @@
 	border: 2px solid grey;
 	border-radius: 12px;
 	z-index: 0;
+	background-color:white;
 }
 
 .form-controls {
