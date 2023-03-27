@@ -6,40 +6,81 @@ import Modal from "./components/Modal/Modal";
 function App() {
 	const [itemArray, setItemArray] = useState([]);
 	const [inputObject, setInputObject] = useState({});
-	const [showModal, setShowModal] = useState(false);
+	const [openModal, setOpenModal] = useState(true);
 	const handleListData = (listItem) => {
 		if (listItem.username !== "" && listItem.age !== "" && listItem.age > 0) {
 			setItemArray((prevExpenses) => {
 				return [listItem, ...prevExpenses];
 			});
 		}
-	};
+	}; // dzieki tej instrukcji warunkowej nie doda sie kolejny item
+
+	// jak przepisac
 
 	const handleInputData = (inputData) => {
 		setInputObject(inputData);
+		setOpenModal(true);
 	};
-
-	// showModal needs to be triggered to true
 
 	const nonNegativeMessage =
 		"Please enter a valid name and age (non-empty values)";
 	const greaterThanZeroMessage = `Please enter a valid age (> 0)`;
 	let modalContent = null;
-	if (inputObject.username === "" || inputObject.age === "") {
-		modalContent = <Modal message={nonNegativeMessage}></Modal>;
-	}
-	if (inputObject.age < 0) {
-		modalContent = <Modal message={greaterThanZeroMessage}></Modal>;
+
+	// Tomkowski -5
+	if (inputObject.username === "" && inputObject.age === "") {
+		modalContent = (
+			<Modal
+				open={openModal}
+				onClose={() => {
+					setOpenModal(false);
+				}}
+				message="Enter valid name and username"
+			></Modal>
+		);
+	} else if (inputObject.username !== "" && inputObject.age === "") {
+		modalContent = (
+			<Modal
+				open={openModal}
+				onClose={() => {
+					setOpenModal(false);
+				}}
+				message="Enter valid age"
+			></Modal>
+		);
+	} else if (inputObject.username === "" && inputObject.age !== "") {
+		modalContent = (
+			<Modal
+				open={openModal}
+				onClose={() => {
+					setOpenModal(false);
+				}}
+				message="Enter valid username"
+			></Modal>
+		);
+	} else if (inputObject.username !== "" && inputObject.age <= 0) {
+		modalContent = (
+			<Modal
+				open={openModal}
+				onClose={() => {
+					setOpenModal(false);
+				}}
+				message="Age must be non-negative"
+			></Modal>
+		);
 	}
 
 	return (
 		<div className={styles.wrapper}>
 			<InputForm onSaveArray={handleListData} inputData={handleInputData} />
 			{modalContent}
-
 			<NameList passedArray={itemArray}></NameList>
 		</div>
 	);
 }
+// if I enter negative age, two messages appear
 
 export default App;
+
+// co ja po kolei klikam, wpisuje dane do formularza, modal sie wyswietla
+// zamykam modal, wtedy openModal jest false

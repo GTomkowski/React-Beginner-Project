@@ -19,9 +19,9 @@ const InputForm = (props) => {
 			age: enteredAge,
 			key: Math.random().toString(),
 		};
-		
+
 		props.onSaveArray(listData);
-		props.inputData(listData)
+		props.inputData(listData);
 		setEnteredUsername("");
 		setAge("");
 	};
@@ -51,7 +51,7 @@ const InputForm = (props) => {
 					value={enteredAge}
 				/>
 			</div>
-			<Button type="submit"></Button>
+			<Button ></Button>
 		</form>
 	);
 };
